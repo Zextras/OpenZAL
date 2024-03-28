@@ -1,4 +1,4 @@
-ZAL - The Abstraction Layer for Zimbra.
+ZAL - The Zimbra Abstraction Layer for Zextras Suite (ZxSuite).
 ===
 <http://openzal.org/>
 
