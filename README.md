@@ -4,13 +4,6 @@
 
 ZAL is distributed under the terms of GNU General Public License version 2 <http://www.gnu.org/licenses/gpl-2.0.html>.
 
-### Download
-
-Latest ZAL is downloadable from <git@github.com:ZeXtras/OpenZAL.git>
-You can clone ZAL repository using:
-
-> `git clone https://zextras.github.io/OpenZAL/`
-
 ### Runtime Dependencies
 
 Zimbra is all you need ;)
@@ -24,7 +17,7 @@ Zimbra is all you need ;)
 
 ```
 $ ./build
-  ZAL - Version 2.5.0
+  ZAL - Version x.y.z
 
   help                                    Show this help message
   zal-all                                 build zal for all zimbra versions
