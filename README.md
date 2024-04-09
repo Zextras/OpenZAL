@@ -1,17 +1,19 @@
 # ZAL - The Zimbra Abstraction Layer
 
-<http://openzal.org/>
+The Zimbra Abstraction Layer module for **[Zextras
+Suite](https://zextras.com/download-trial-suite)** for Zimbra.
 
-ZAL is distributed under the terms of GNU General Public License version 2 <http://www.gnu.org/licenses/gpl-2.0.html>.
+[https://openzal.org/](https://openzal.org)
 
 ### Runtime Dependencies
 
-Zimbra is all you need ;)
+- Zimbra
 
 ### Simple build
 
-> `$ ./build zal-all`
-> All dependencies will be downloaded automatically and jars will be created in dist/{VERSION}/zal.jar
+`$ ./build zal-all`
+All dependencies will be downloaded automatically and jars will be created
+in `dist/{VERSION}/zal.jar`
 
 ### Build Targets
 
@@ -36,20 +38,20 @@ $ ./build
 OpenZAL can be place anywhere, and zimbra must be installed into /opt/zimbra.
 Then run:
 
-> `./build zal-dev-current-binary`
+`./build zal-dev-current-binary`
 
 **zal-dev-current-source**:
 
 Simply place OpenZAL into same directory of zm-build and follow guide <https://github.com/Zimbra/zm-build/wiki/installer-build> to
 build Zimbra. Then run:
 
-> `./build zal-dev-current-source`
+`./build zal-dev-current-source`
 
 **Adding a zimbra version**:
 For each zimbra version you want to build ZAL for:
 
-- copy all file from "/opt/zimbra/lib/jars/" in "zimbra/${VERSION}/jars/"
-- copy from "/opt/zimbra/common/jetty_home/lib/"  
+- copy all file from `/opt/zimbra/lib/jars/` in `zimbra/${VERSION}/jars/`
+- copy from `/opt/zimbra/common/jetty_home/lib/`
   jetty-continuation-x.x.x.y.jar
   jetty-http-x.x.x.y.jar
   jetty-io-x.x.x.y.jar
@@ -59,5 +61,9 @@ For each zimbra version you want to build ZAL for:
   jetty-servlet-x.x.x.y.jar
   jetty-servlets-x.x.x.y.jar
   jetty-util-x.x.x.y.jar
-  in "zimbra/${VERSION}/jars/"
-- copy jtnef-x.x.x.jar from "jetty_base/common/lib" in "zimbra/${VERSION}/jars/"
+  in `zimbra/${VERSION}/jars/`
+- copy `jtnef-x.x.x.jar` from `jetty_base/common/lib` in `zimbra/${VERSION}/jars/`
+
+## License(s)
+
+See [COPYING](COPYING) file for detail.
