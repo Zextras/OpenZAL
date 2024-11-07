@@ -23,24 +23,28 @@ package org.openzal.zal.log;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class PatternLayout extends org.apache.log4j.PatternLayout
+import org.apache.logging.log4j.core.LogEvent;
+import org.apache.logging.log4j.core.config.plugins.Plugin;
+import org.apache.logging.log4j.core.pattern.ConverterKeys;
+import org.apache.logging.log4j.core.pattern.LogEventPatternConverter;
+
+@Plugin(name = "PatternLayout", category = "Converter")
+@ConverterKeys({ "z" })
+public class PatternLayout extends LogEventPatternConverter
 {
-  public static String DEFAULT_PATTERN = "%m%n";
 
-  public PatternLayout()
+  protected PatternLayout(String name, String style) {
+      super(name, style);
+  }
+
+  public static PatternLayout newInstance(String[] options)
   {
-    this(DEFAULT_PATTERN);
+      return new PatternLayout("z", Thread.currentThread().getName());
   }
 
-  public PatternLayout(String pattern) {
-    super(pattern);
+  @Override
+  public void format(LogEvent event, StringBuilder toAppendTo) {
+      toAppendTo.append(com.zimbra.common.util.ZimbraLog.getContextString() == null ? "" : com.zimbra.common.util.ZimbraLog.getContextString());
   }
 
-  @Nonnull
-  public org.apache.log4j.helpers.PatternParser createPatternParser(@Nullable String pattern) {
-    if (pattern == null) {
-      pattern = DEFAULT_PATTERN;
-    }
-    return new PatternParser(pattern, this);
-  }
 }
