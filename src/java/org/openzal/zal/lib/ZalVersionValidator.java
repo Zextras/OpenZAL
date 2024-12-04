@@ -38,7 +38,7 @@ public class ZalVersionValidator
   private void validateVersion(JarAccessor jar, ZimbraVersion zalVersion) throws IOException
   {
     Version zalImplementationVersion = new Version(jar.getAttributeInManifest(ATTR_ZAL_IMPLEMENTATION));
-    if (!zalImplementationVersion.equals(zalVersion))
+    if (!zalImplementationVersion.is(zalVersion.getMajor(),zalVersion.getMinor()))
     {
       throw new RuntimeException(
         "Zimbra version mismatch - ZAL " + jar.getPath() + " built for Zimbra: " + zalImplementationVersion.toString()
